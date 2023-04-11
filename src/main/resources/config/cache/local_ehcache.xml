@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="GBK"?>
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="ehcache.xsd"
+         updateCheck="true" monitoring="autodetect"
+         name="localCache">
+
+    <defaultCache
+            maxElementsInMemory="200"
+            eternal="true"
+            overflowToDisk="false"
+            memoryStoreEvictionPolicy="LRU"
+    />
+    <cache name="local"
+           maxElementsInMemory="80"
+           eternal="true"
+           overflowToDisk="false"
+           memoryStoreEvictionPolicy="LRU"
+           copyOnRead="true"
+           copyOnWrite="true"
+    />
+
+    <!-- 产品，单例 -->
+    <cache name="product.single"
+           maxElementsInMemory="40"
+           eternal="true"
+           overflowToDisk="false"
+           memoryStoreEvictionPolicy="LRU"
+    />
+
+    <!-- 产品非单例 -->
+    <cache name="product.mulity"
+           maxElementsInMemory="40"
+           eternal="true"
+           overflowToDisk="false"
+           memoryStoreEvictionPolicy="LRU"
+           copyOnRead="true"
+           copyOnWrite="true"
+    />
+
+</ehcache>
